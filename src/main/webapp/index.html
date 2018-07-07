@@ -16,14 +16,6 @@
         </button>
          <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-              <!--
-               <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Clientes">
-                  <a class="nav-link" ui-sref="clienteList">
-                  <i class="fa fa-fw fa-user-o"></i>
-                  <span class="nav-link-text">Clientes</span>
-                  </a>
-               </li> -->
-               
                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Clientes">
                   <a class="nav-link nav-link-collapse collapsed" 
                      data-toggle="collapse" 
@@ -47,9 +39,7 @@
       
       <div class="content-wrapper">
          <main role="main" class="col-md-12 ml-sm-auto col-lg-12">
-            <ui-view>
-              
-            <ui-view>
+            <ui-view><ui-view>
          </main> 
          <!-- Bootstrap core JavaScript-->
          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -69,6 +59,7 @@
          <script src="app/dialog.builder.service.js"></script>
          <script src="app/cliente/cliente-cad/cliente-cad.controller.js"></script>
          <script src="app/cliente/cliente-list/cliente-list.controller.js"></script>
+         <script src="app/cliente/emprestimo/emprestimo.controller.js"></script>
          <script src="app/cliente/cliente.service.js"></script>
       </div>
    </body>

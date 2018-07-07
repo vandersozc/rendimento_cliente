@@ -30,6 +30,12 @@
         controller: 'ClienteCadController',
         controllerAs: 'vm'
       })
-
+      .state({
+        name: 'calcularEmprestimo',
+        url: '/simular-emprestimo/cliente/{id}',
+        templateUrl: '/app/cliente/emprestimo/emprestimo.html',
+        controller: 'EmprestimoController',
+        controllerAs: 'vm'
+      })
   }
 })();
