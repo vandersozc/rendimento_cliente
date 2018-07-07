@@ -2,7 +2,7 @@
 
 [![License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/vandersozc/rendimento_cliente/blob/master/LICENCA)
 [![Build Status](https://travis-ci.com/vandersozc/rendimento_cliente.svg?branch=master)](https://travis-ci.com/vandersozc/rendimento_cliente)
-[![SonarQube Coverage](https://img.shields.io/sonar/http/sonar.petalslink.com/org.ow2.petals%3Apetals-se-ase/coverage.svg)](https://sonarcloud.io/dashboard?id=com.vandersoncamp%3rendimento_cliente%3Amaster)
+[![SonarQube Coverage](https://img.shields.io/sonar/http/sonar.petalslink.com/org.ow2.petals%3Apetals-se-ase/coverage.svg)](https://sonarcloud.io/dashboard?id=com.vandersoncamp%3Arendimento%3Amaster)
 
 -------
 <p align="center">
@@ -46,7 +46,7 @@ mvn clean test
 
 ## Build e Análise
 - O build remoto do projeto pode ser visualizado com: [Travis CI](https://travis-ci.com/vandersozc/rendimento_cliente).
-- A análise de código pode ser visualizada com: [SonarCLoud](https://sonarcloud.io/dashboard?id=com.vandersoncamp%3rendimento_cliente%3Amaster).
+- A análise de código pode ser visualizada com: [SonarCLoud](https://sonarcloud.io/dashboard?id=com.vandersoncamp%3Arendimento%3Amaster).
 
 ## Serviços
 EndPoints disponíneis para utilização do serviço.
