@@ -7,7 +7,7 @@
 -------
 <p align="center">
     <a href="#projeto">Projeto</a> &bull;
-	<a href="#instalação">Instalação</a> &bull;
+	<a href="#instalação-e-utilizacao">Instalação</a> &bull;
 	<a href="#testes-e-cobertura">Testes e Cobertura</a> &bull;
 	<a href="#build-e-análise">Build e Análise do código</a> &bull;
 	<a href="#endpoints">Serviços disponíneis</a> &bull;
@@ -48,10 +48,9 @@ mvn clean test
 - O build remoto do projeto pode ser visualizado com: [Travis CI](https://travis-ci.com/vandersozc/Bankslip).
 - A análise de código pode ser visualizada com: [SonarCLoud](https://sonarcloud.io/dashboard?id=com.vandersoncamp%3Abankslip%3Amaster).
 
-## EndPoints
-
+## Serviços
 EndPoints disponíneis para utilização do serviço.
 
 
 ## Licença
-Este projeto está licenciado sob os termos da licença do MIT. Veja o arquivo LICENÇA.
+Este projeto está licenciado sob os termos da licença do MIT. Veja o arquivo [LICENÇA](https://github.com/vandersozc/Bankslip/blob/master/LICENCA).
