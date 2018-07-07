@@ -7,7 +7,7 @@
 -------
 <p align="center">
     <a href="#projeto">Projeto</a> &bull;
-	<a href="#instalação-e-utiliza">Instalação e Utilização</a> &bull;
+	<a href="#instalação">Instalação e Utilização</a> &bull;
 	<a href="#testes-e-cobertura">Testes e Cobertura</a> &bull;
 	<a href="#build-e-análise">Build e Análise do código</a> &bull;
 	<a href="#endpoints">Serviços disponíneis</a> &bull;
@@ -20,7 +20,7 @@
 Serviço de API Rest para cálculo de rendimento de clientes. Pode ser consumido por um módulo de um sistema, onde é possível cadastrar um cliente e seus endereços, calcular o rendimento de um cliente e pesquisar os rendimentos.
 
 
-## Instalação e Utilização
+## Instalação
 
 Back-end:
 Este projeto utiliza [Maven](https://maven.apache.org/), para build da aplicação e gerenciamento das dependências. Foi construído utilizando a stack do [WildFly Swarm](http://wildfly-swarm.io/). Efetuar o download do projeto e executar o build através da linha de comando na pasta raiz do projeto ou pela IDE de desenvolvimento:
