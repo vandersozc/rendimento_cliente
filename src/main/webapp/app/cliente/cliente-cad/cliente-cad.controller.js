@@ -27,6 +27,7 @@
       vm.editarEndereco = editarEndereco;
       vm.salvarEndereco = salvarEndereco;
       vm.novoEndereco = novoEndereco;
+      vm.alteraRisco = alteraRisco;
 
       if ($stateParams.id) {
         ClienteService.findById($stateParams.id)
@@ -82,6 +83,19 @@
       function excluirEndereco(item) {
           var index = vm.cadastro.enderecos.indexOf(item);
           vm.cadastro.enderecos.splice(index, 1);
+      }
+
+      function alteraRisco() {
+          if (vm.cadastro.rendimentoMensal) {
+              var rendimento = vm.cadastro.rendimentoMensal;
+              if (rendimento <= 2000) {
+                vm.cadastro.risco = 'C';
+              } else if (rendimento > 2000 && rendimento <= 8000) {
+                vm.cadastro.risco = 'B';
+              } else {
+                vm.cadastro.risco = 'A';
+              }
+          }
       }
   }
 })();

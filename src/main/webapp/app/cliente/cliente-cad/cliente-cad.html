@@ -35,6 +35,7 @@
                                 class="form-control" 
                                 name="rendimentoMensal"
                                 ng-disabled="false"
+                                ng-change="vm.alteraRisco()"
                                 required>
                                 <small ng-if="vm.error.rendimentoMensal && !vm.cadastro.rendimentoMensal" class="invalid-feedback">
                                     {{vm.error.rendimentoMensal[1]}}
@@ -45,11 +46,15 @@
                     <label for="risco" class="required">Risco</label>
                     <div class="input-group mb-2">
                         <input ng-model="vm.cadastro.risco"
-                                type="text" 
-                                class="form-control" 
-                                name="risco"
-                                ng-disabled="false"
-                                required>
+                            type="text" 
+                            class="form-control" 
+                            name="risco"
+                            ng-disabled="true"
+                            required>
+                    </select>
+                    <small ng-if="vm.error.risco && !vm.cadastro.risco" class="invalid-feedback">
+                        {{vm.error.risco[1]}}
+                    </small>
                     </div>
                 </div>
             </div>
