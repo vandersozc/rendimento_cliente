@@ -62,8 +62,8 @@
 
         <!-- Inclusão de Endereços -->
         <!-- ng-disabled="(!vm.cadastro.nome || !vm.cadastro.rendimentoMensal || !vm.cadastro.risco)"   -->
-        <div class="table-responsive">
-            <div class="text-right m-2">
+        <div class="card">
+            <div class="card-header">
                 <button ng-click="vm.novoEndereco()" 
                         data-toggle="modal" 
                         data-target="#formEndereco"
@@ -72,49 +72,51 @@
                         class="btn btn-sm btn-outline-primary">
                     <span class="feather icon-plus"></span>
                     <span>+ Endereço</span>
-                </button>
+                </button>      
             </div>
-            <table class="table table-hover table-sm">
-                <thead>
-                    <tr>
-                        <th class="text-right" width="25px">Código</th>
-                        <th class="text-left">Logradouro</th>
-                        <th class="text-center">Cep</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="item in vm.cadastro.enderecos">
-                        <td class="text-center">{{$index +1}}</td>
-                        <td>{{item.logradouro}}, {{item.numero}}</td>
-                        <td class="text-center">{{item.cep}}</td>
-                        <td class="text-right">
-                            <button ng-click="vm.editarEndereco(item)" 
-                                    data-toggle="modal" 
-                                    data-target="#formEndereco" 
-                                    class="btn btn-outline-secondary py-0">
-                                <span class="fa fa-pencil"></span>
-                            </button>
-                            <button ng-click="vm.excluirEndereco(item)" 
-                                    class="btn btn-outline-danger py-0">
-                                <span class="fa fa-trash"></span>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="card-body">
+                <table class="table table-hover table-sm" ng-if="vm.cadastro.enderecos.length > 0">
+                    <thead>
+                        <tr>
+                            <th class="text-right" width="25px">Código</th>
+                            <th class="text-left">Logradouro</th>
+                            <th class="text-left">Número</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in vm.cadastro.enderecos">
+                            <td class="text-center">{{$index +1}}</td>
+                            <td>{{item.logradouro}}</td>
+                            <td class="text-left">{{item.numero}}</td>
+                            <td class="text-right">
+                                <button ng-click="vm.editarEndereco(item)" 
+                                        data-toggle="modal" 
+                                        data-target="#formEndereco" 
+                                        class="btn btn-outline-secondary py-0">
+                                    <span class="fa fa-pencil"></span>
+                                </button>
+                                <button ng-click="vm.excluirEndereco(item)" 
+                                        class="btn btn-outline-danger py-0">
+                                    <span class="fa fa-trash"></span>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="form-row justify-content-end">
+        <!--ng-disabled="vm.cadastro.enderecos.length <= 0"-->
+        <div class="form-row justify-content-end pt-3 mr-1">
             <button ng-click="vm.salvar()" 
                     type="button"
-                    ng-disabled="vm.cadastro.enderecos.length <= 0" 
+                        
                     class="btn btn-outline-success mr-2">Salvar
             </button>
             <a ui-sref="clienteList" 
-               class="btn btn-outline-danger">Cancelar
+                class="btn btn-outline-danger">Cancelar
             </a>
         </div>
-
         <!-- Modal de endereços -->
         <div class="modal fade" 
              id="formEndereco" 
@@ -138,7 +140,7 @@
                                 <input ng-model="vm.itemLista.logradouro"
                                         type="text" 
                                         class="form-control"
-                                        maxlength="255" 
+                                        maxlength="80" 
                                         required>
                                 </div>
                                 <div class="form-group col-md-3">
@@ -146,7 +148,9 @@
                                     <input ng-model="vm.itemLista.numero"
                                             type="text" 
                                             class="form-control"
-                                            required>
+                                            required
+                                            name="numero"
+                                            maxlength="10">
                                 </div>
                             </div>
                             <div class="form-row">
@@ -155,14 +159,16 @@
                                 <input ng-model="vm.itemLista.cep"
                                         type="text" 
                                         class="form-control"
-                                        maxlength="8">
+                                        maxlength="9"
+                                        name="cep"
+                                        ui-br-cep-mask>
                                 </div>
                                 <div class="form-group col-md-8">
                                 <label for="bairro">Bairro</label>
                                 <input ng-model="vm.itemLista.bairro"
                                         type="text" 
                                         class="form-control"
-                                        maxlength="100">
+                                        maxlength="50">
                                 </div>
                             </div>
                             <div class="form-row">
@@ -171,14 +177,14 @@
                                 <input ng-model="vm.itemLista.cidade"
                                         type="text" 
                                         class="form-control"
-                                        maxlength="100">
+                                        maxlength="50">
                                 </div>
                                 <div class="form-group col-md-6">
                                 <label for="estado">Estado</label>
                                 <input ng-model="vm.itemLista.estado"
                                         type="text" 
                                         class="form-control"
-                                        maxlength="100">
+                                        maxlength="50">
                                 </div>
                             </div>
                             <div class="form-row">
@@ -198,7 +204,7 @@
                             class="btn btn-outline-success mr-2"
                             ng-click="vm.salvarEndereco()"
                             ng-disabled="(!vm.itemLista.logradouro || !vm.itemLista.numero)"
-                            data-dismiss="modal">Cadastrar
+                            data-dismiss="modal">Gravar
                         </a>
                         <button type="button" 
                                 class="btn btn-outline-danger" 
