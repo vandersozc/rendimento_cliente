@@ -2,11 +2,11 @@
   'use strict'
 
   angular.module('app')
-    .controller('CondutorListController', CondutorListController);
+    .controller('ClienteListController', ClienteListController);
 
-  CondutorListController.$inject = ['CondutorService', 'DialogBuilder'];
+    ClienteListController.$inject = ['ClienteService', 'DialogBuilder'];
 
-  function CondutorListController(CondutorService, DialogBuilder) {
+  function ClienteListController(ClienteService, DialogBuilder) {
 
     var vm = this;
     vm.lista = {};
@@ -28,7 +28,7 @@
     }
 
     function inicializa() {
-      CondutorService.findAll(vm.filtro, vm.page)
+      ClienteService.findAll(vm.filtro, vm.page)
         .then(function (data) {
           vm.lista = data;
         });
@@ -38,20 +38,20 @@
       DialogBuilder.confirm('Tem certeza que deseja remover o registro?')
         .then(function (result) {
           if (result.value) {
-            CondutorService.remove(item.id)
+            ClienteService.remove(item.id)
               .then(function () {
                 DialogBuilder.message('Registro excluído com sucesso!');
                 inicializa();
               });
           } else {
             DialogBuilder.message({
-              title: 'Exclusão cancelada pelo usuário!',
+              title: 'Exclusão cancelada!',
               type: 'error'
             });
           }
         });
     }
-
+    
     inicializa();
   }
 

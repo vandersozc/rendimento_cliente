@@ -2,22 +2,22 @@
   'use strict'
 
   angular.module('app')
-    .factory('CalculoCargaService', CalculoCargaService);
+    .factory('ClienteService', ClienteService);
 
-    CalculoCargaService.$inject = ['$http'];
+    ClienteService.$inject = ['$http'];
 
-  function CalculoCargaService($http) {
+  function ClienteService($http) {
 
     function findAllOver() {
-      return $http.get('http://localhost:8080/api/calculos-carga/all?order=descricao')
+      return $http.get('http://localhost:8080/api/clientes/all?order=nome')
         .then(function (response) {
           return response.data;
         });
     }
 
     function findAll(filtro, page) {
-      return $http.get('http://localhost:8080/api/calculos-carga?page=' + page.number
-        + '&size=' + page.size + '&filterField=descricao&filterValue=' + filtro)
+      return $http.get('http://localhost:8080/api/clientes?page=' + page.number
+        + '&size=' + page.size + '&filterField=nome&filterValue=' + filtro)
         .then(function (response) {
           return {
             registros: response.data,
@@ -42,28 +42,28 @@
     }
 
     function findById(id) {
-      return $http.get('http://localhost:8080/api/calculos-carga/' + id)
+      return $http.get('http://localhost:8080/api/clientes/' + id)
         .then(function (response) {
           return response.data;
         });
     }
 
     function insert(registro) {
-      return $http.post('http://localhost:8080/api/calculos-carga', registro)
+      return $http.post('http://localhost:8080/api/clientes', registro)
         .then(function (response) {
           return response.data;
         });
     }
 
     function update(registro) {
-      return $http.put('http://localhost:8080/api/calculos-carga/' + registro.id, registro)
+      return $http.put('http://localhost:8080/api/clientes/' + registro.id, registro)
         .then(function (response) {
           return response.data;
         });
     }
 
     function remove(id) {
-      return $http.delete('http://localhost:8080/api/calculos-carga/' + id)
+      return $http.delete('http://localhost:8080/api/clientes/' + id)
         .then(function (response) {
           return response.data;
         });

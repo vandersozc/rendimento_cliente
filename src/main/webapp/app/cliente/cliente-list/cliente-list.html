@@ -3,7 +3,7 @@
       <div class="row">
          <main role="main" class="col-md-12 ml-sm-auto col-lg-12">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-1 pb-1 mb-2">
-               <h3 class="breadcrumb-item active">Listagem de Cálculos de Condução de Corrente</h3>
+               <h3 class="breadcrumb-item active">Listagem de Clientes</h3>
                
                <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="input-group">
@@ -25,7 +25,7 @@
                                     class= "btn btn-outline-primary mr-4"
                                     ng-click="vm.atualizar()">
                                     <i class="fa fa-search"></i></button>
-                            <a ui-sref="calculoCorrenteNovo" class="btn btn-outline-primary">Adicionar</a>
+                            <a ui-sref="clienteNovo" class="btn btn-outline-primary">Cadastrar</a>
                         </div>
                     </div>
                </div>
@@ -36,22 +36,16 @@
                   <thead>
                      <tr>
                         <th class="text-right" width="25px">Código</th>
-                        <th class="text-left">Aparelho</th>
-                        <th class="text-center">Corrente(Ah)</th>
-                        <th class="text-center">Distância(Mts)</th>
-                        <th class="text-center">Queda de Tensão</th>
+                        <th class="text-left">Nome do Cliente</th>
                         <th></th>
                      </tr>
                   </thead>
                   <tbody>
                      <tr ng-repeat="item in vm.lista.registros">
                         <td class="text-center">{{$index +1}}</td>
-                        <td>{{item.aparelho.descricao}}</td>
-                        <td class="text-center">{{item.corrente | number:2}}</td>
-                        <td class="text-center">{{item.distancia | number:2}}</td>
-                        <td class="text-center">{{item.quedaTensao | number:2}}</td>
+                        <td>{{item.nome}}</td>
                         <td class="text-right">
-                            <button ui-sref="calculoCorrenteEditar({id: item.id})" class="btn btn-outline-secondary py-0">
+                            <button ui-sref="clienteEditar({id: item.id})" class="btn btn-outline-secondary py-0">
                                 <span class="fa fa-pencil"></span>
                             </button>
 
@@ -62,6 +56,8 @@
                      </tr>
                   </tbody>
                </table>
+
+               <!--
                <nav class="navbar">
                     <ul class="navbar-nav col-sm-3">
                         <li class="nav-item">
@@ -97,7 +93,7 @@
                             </ul>
                         </nav>
                     </form>
-                </nav>
+                </nav> -->
             </div>
          </main>
       </div>
