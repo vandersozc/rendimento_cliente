@@ -7,7 +7,7 @@
 -------
 <p align="center">
     <a href="#projeto">Projeto</a> &bull;
-	<a href="#instalação-e-utilizacao">Instalação</a> &bull;
+	<a href="#instalação-e-utiliza">Instalação e Utilização</a> &bull;
 	<a href="#testes-e-cobertura">Testes e Cobertura</a> &bull;
 	<a href="#build-e-análise">Build e Análise do código</a> &bull;
 	<a href="#endpoints">Serviços disponíneis</a> &bull;
