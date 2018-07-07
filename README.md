@@ -1,8 +1,8 @@
 # Rendimento de Clientes
 
-[![License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/vandersozc/Bankslip/blob/master/LICENCA)
-[![Build Status](https://travis-ci.com/vandersozc/Bankslip.svg?branch=master)](https://travis-ci.com/vandersozc/Bankslip)
-[![SonarQube Coverage](https://img.shields.io/sonar/http/sonar.petalslink.com/org.ow2.petals%3Apetals-se-ase/coverage.svg)](https://sonarcloud.io/dashboard?id=com.vandersoncamp%3Abankslip%3Amaster)
+[![License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/vandersozc/rendimento_cliente/blob/master/LICENCA)
+[![Build Status](https://travis-ci.com/vandersozc/rendimento_cliente.svg?branch=master)](https://travis-ci.com/vandersozc/rendimento_cliente)
+[![SonarQube Coverage](https://img.shields.io/sonar/http/sonar.petalslink.com/org.ow2.petals%3Apetals-se-ase/coverage.svg)](https://sonarcloud.io/dashboard?id=com.vandersoncamp%3rendimento_cliente%3Amaster)
 
 -------
 <p align="center">
@@ -45,12 +45,12 @@ mvn clean test
 ```
 
 ## Build e Análise
-- O build remoto do projeto pode ser visualizado com: [Travis CI](https://travis-ci.com/vandersozc/Bankslip).
-- A análise de código pode ser visualizada com: [SonarCLoud](https://sonarcloud.io/dashboard?id=com.vandersoncamp%3Abankslip%3Amaster).
+- O build remoto do projeto pode ser visualizado com: [Travis CI](https://travis-ci.com/vandersozc/rendimento_cliente).
+- A análise de código pode ser visualizada com: [SonarCLoud](https://sonarcloud.io/dashboard?id=com.vandersoncamp%3rendimento_cliente%3Amaster).
 
 ## Serviços
 EndPoints disponíneis para utilização do serviço.
 
 
 ## Licença
-Este projeto está licenciado sob os termos da licença do MIT. Veja o arquivo [LICENÇA](https://github.com/vandersozc/Bankslip/blob/master/LICENCA).
+Este projeto está licenciado sob os termos da licença do MIT. Veja o arquivo [LICENÇA](https://github.com/vandersozc/rendimento_cliente/blob/master/LICENCA).
