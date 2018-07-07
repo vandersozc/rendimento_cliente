@@ -1,0 +1,79 @@
+<html ng-app="app">
+  <div class="container">
+    <div class="row">
+      <main role="main" class="col-md-10 ml-sm-auto col-lg-12">
+        <div class="d-flex flex-wrap flex-md-nowrap align-items-center pt-1 pb-1 mb-2">                
+            <a href="javascript:window.history.go(-1)" 
+            class="fa fa-arrow-left pt-1 pb-1 mb-2" 
+            style="font-size:30px;color:gray">
+         </a>          
+         <h3 class="breadcrumb-item active">&ensp;Novo Condutor</h3>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="nome" class="required">Descrição</label>
+                <input ng-model="vm.cadastro.descricao"
+                       ng-class="{'is-invalid': vm.error.descricao && !vm.cadastro.descricao}"  
+                       type="text" 
+                       class="form-control" 
+                       id="descricao"
+                       required>
+                <small ng-if="vm.error.descricao && !vm.cadastro.descricao" class="invalid-feedback">
+                    {{vm.error.descricao[1]}}
+                </small>
+             </div>
+             <div class="form-row">
+                <div class="form-group col-md-6">
+                   <label for="tipo" class="required">Tipo</label>
+                   <input ng-model="vm.cadastro.tipo"
+                          ng-class="{'is-invalid': vm.error.tipo && !vm.cadastro.tipo}"  
+                          type="text" 
+                          class="form-control" 
+                          id="tipo"
+                          required>
+                   <small ng-if="vm.error.tipo && !vm.cadastro.tipo" class="invalid-feedback">
+                      {{vm.error.tipo[1]}}
+                   </small>
+                </div>
+                <div class="form-group col-md-6">
+                   <label for="cor" class="required">Cor</label>
+                   <input ng-model="vm.cadastro.cor"
+                          ng-class="{'is-invalid': vm.error.cor && !vm.cadastro.cor}" 
+                          type="text" 
+                          class="form-control" 
+                          id="cor"
+                          required>
+                   <small ng-if="vm.error.cor && !vm.cadastro.cor" class="invalid-feedback">
+                      {{vm.error.cor[1]}}
+                   </small>
+                </div>
+             </div>
+             <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="espessura" class="required">Espessura</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">mm</div>
+                        </div>
+                        <input ng-model="vm.cadastro.espessura"
+                                ui-number-mask
+                                ng-class="{'is-invalid': vm.error.espessura && !vm.cadastro.espessura}"  
+                                type="text`" 
+                                class="form-control" 
+                                name="espessura"
+                                required>
+                              <small ng-if="vm.error.espessura && !vm.cadastro.espessura" class="invalid-feedback">
+                                    {{vm.error.espessura[1]}}
+                              </small>
+                    </div>
+                </div>
+             </div>
+            <div class="form-row justify-content-end">
+              <button ng-click="vm.salvar()" type="button" class="btn btn-outline-success mr-2">Salvar</button>
+              <a ui-sref="condutorList" class="btn btn-outline-danger">Cancelar</a>
+            </div>
+          </form>
+      </main>
+    </div>
+  </div>
+</html>

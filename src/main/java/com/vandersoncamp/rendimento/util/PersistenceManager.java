@@ -1,0 +1,1 @@
+package com.vandersoncamp.rendimento.util;import javax.enterprise.inject.Produces;import javax.persistence.EntityManager;import javax.persistence.PersistenceContext;public class PersistenceManager {    @Produces    @PersistenceContext(unitName = "rendimentoPU")    private EntityManager em;    public EntityManager getEntityManager() {        return em;    }}

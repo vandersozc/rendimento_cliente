@@ -1,0 +1,1 @@
+package com.vandersoncamp.rendimento.model;public enum RiscoEnum {    A,    B,    C}
