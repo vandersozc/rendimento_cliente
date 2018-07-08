@@ -9,6 +9,11 @@ import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 import java.util.*;
 
+/**
+ * Classe responsável pela verificação das entidades
+ * @author vanderson.campanholi
+ */
+
 @Provider
 public class ConstraintViolationMapper implements ExceptionMapper<ConstraintViolationException> {
 

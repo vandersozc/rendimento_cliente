@@ -128,7 +128,7 @@ public class JpaCriteriaHelper<T extends EntityID> {
     }
 
     /**
-     * Inclui uma clausula WHERE com operador {@link ComparatorOperator.EQUAL} implicito
+     * Inclui uma clausula WHERE com operador implicito
      * @param fieldName fieldName Nome da propriedade
      * @param value Valor
      * @return objeto de consulta
@@ -138,7 +138,6 @@ public class JpaCriteriaHelper<T extends EntityID> {
     }
 
     /**
-     * Inclui uma clausula WHERE com operador {@link ComparatorOperator.EQUAL} implicito
      * @param fieldNames fieldName Nome da propriedade
      * @param value Valor
      * @return objeto de consulta
@@ -147,14 +146,9 @@ public class JpaCriteriaHelper<T extends EntityID> {
         return where(fieldNames, ComparatorOperator.EQUAL, value);
     }
 
-
-
     /**
      * Inclui uma clausula WHERE
-     * @param fieldName Nome da propriedade
-     * @param comparator Comparador <b>(Para {@link ComparatorOperator.GREATER_THAN} e {@link ComparatorOperator.GREATER_THAN}
-     * é necessário que valor complemente {@link Comparable})</b>
-     * @param value Valor
+     * é necessário que valor complemente
      * @return objeto de consulta
      */
     public JpaCriteriaHelper<T> where( String fieldName, ComparatorOperator comparator, Object value ) {
@@ -214,9 +208,8 @@ public class JpaCriteriaHelper<T extends EntityID> {
     /**
      * Inclui uma clausulaWHERE após um operador AND
      * @param fieldName Nome da propriedade
-     * @param comparator Comparador <b>(Para {@l1ink ComparatorOperator.GREATER_THAN} e {@link ComparatorOperator.GREATER_THAN}
-     * é necessário que valor complemente {@link Comparable})</b>
-     * @param value Valor
+     * é necessário que valor complemente {@link Comparable})
+     * @param  fieldName
      * @return objeto de consulta
      */
     public JpaCriteriaHelper<T> and( String fieldName, ComparatorOperator comparator, Object value ) {
@@ -239,8 +232,8 @@ public class JpaCriteriaHelper<T extends EntityID> {
      * Inclui uma clausula WHERE de BETWEEN após um operador OR
      * @param fieldName Nome da propriedade
      * @param comparator Comparador BETWEEN (apenas este é aceito para este método)
-     * @param valueIni Valor inicial <b>(necessita implementar {@link Comparable})</b>
-     * @param valueEnd Valor final <b>(necessita implementar {@link Comparable})</b>
+     * @param valueIni Valor inicial <b>(necessita implementar {@link Comparable})
+     * @param valueEnd Valor final <b>(necessita implementar {@link Comparable})
      * @return objeto de consulta
      */
     @SuppressWarnings({ "rawtypes" })
@@ -252,9 +245,8 @@ public class JpaCriteriaHelper<T extends EntityID> {
     /**
      * Inclui uma clausula WHERE após um operador OR
      * @param fieldName Nome da propriedade
-     * @param comparator Comparador <b>(Para {@link ComparatorOperator.GREATER_THAN} e {@link ComparatorOperator.GREATER_THAN}
-     * é necessário que valor complemente {@link Comparable})</b>
-     * @param value Valor
+     * é necessário que valor complemente {@link Comparable})
+     * @param fieldName
      * @return objeto de consulta
      */
     public JpaCriteriaHelper<T> or( String fieldName, ComparatorOperator comparator, Object value ) {
@@ -434,15 +426,6 @@ public class JpaCriteriaHelper<T extends EntityID> {
         setupQuery(criteriaQuery, root);
 
         return em.createQuery(criteriaQuery).getSingleResult();
-    }
-
-    /**
-     * Verifica se a consulta retorna algum resultado
-     * @return <li><b>true</b>: existem registros
-     *         <li><b>false</b>: não existem registros
-     */
-    public boolean exists() {
-        return this.getFirstResult() != null;
     }
 
     /**

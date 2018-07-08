@@ -5,6 +5,11 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 
+/**
+ * Classe responsável pela verificação da existência da entidade
+ * @author vanderson.campanholi
+ */
+
 @Provider
 public class EntityNotFoundMapper implements ExceptionMapper<EntityNotFoundException> {
 
