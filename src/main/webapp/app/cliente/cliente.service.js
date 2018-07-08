@@ -69,13 +69,21 @@
         });
     }
 
+    function simularEmprestimo(registro) {
+      return $http.put('http://localhost:8080/api/clientes/simular-emprestimo', registro)
+        .then(function (response) {
+          return response.data;
+        });
+    }
+
     return {
       findAll: findAll,
       findAllOver: findAllOver,
       findById: findById,
       insert: insert,
       update: update,
-      remove: remove
+      remove: remove,
+      simularEmprestimo: simularEmprestimo
     }
     
   }

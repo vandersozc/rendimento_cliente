@@ -13,19 +13,21 @@
   function EmprestimoController(ClienteService, $state, $stateParams) {
 
       var vm = this;
-      vm.cliente = {};
+      vm.emprestimo = {};
 
       vm.simularEmprestimo = simularEmprestimo;
 
       if ($stateParams.id) {
         ClienteService.findById($stateParams.id)
-          .then(function (data) {
-              vm.cliente = data;
+          .then(function (cliente) {
+            vm.emprestimo.cliente = cliente;
           });
       }
 
       function simularEmprestimo() {
-        console.log("dasgdhjasgdhsagjhdgjhasd");
+        ClienteService.simularEmprestimo(vm.emprestimo).then(function (data) {
+          vm.emprestimo = data;
+        })
       }
   }
 })();
