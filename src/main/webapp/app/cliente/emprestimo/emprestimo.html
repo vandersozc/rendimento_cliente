@@ -2,49 +2,64 @@
 <div class="container">
     <div class="row">
         <main role="main" class="col-md-10 ml-sm-auto col-lg-12">
-        
-        <form>
-            <div class="d-flex flex-wrap flex-md-nowrap align-items-center pt-1 pb-1 mb-2">
-                <h3 class="breadcrumb-item active">&ensp;Simulando Empréstimo</h3>
-            </div>
-            <div class="form-group">
-                    <h5>Nome do Cliente: {{vm.cadastro.nome}}</h5>
-                    <h5>Rendimento Mensal: R$  {{vm.cadastro.rendimentoMensal}}</h5>
-<!--
-                <label for="cliente" class="required">Nome do Cliente</label>
-                <input ng-model="vm.cadastro.nome"
-                        ng-class="{'is-invalid' : vm.error.nome && !vm.cadastro.nome}"
-                        type="text" 
-                        class="form-control"
-                        maxlength="100" 
-                        required>
-                </div>-->
-            </div>
-            <!--
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="potencia" class="required">Rendimento Mensal</label>
-                    <div class="input-group mb-2">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">R$</div>
-                    </div>
-                        <input ng-model="vm.cadastro.rendimentoMensal"
-                                type="text" 
-                                class="form-control" 
-                                name="rendimentoMensal"
-                                ng-disabled="false">
+            <form>
+                <div class="card mx-auto" style="width:650px;">
+                    <h5 class="card-header">Simulando Empréstimo</h5>
+                    <div class="card-body">
+                        <p class="card-text">Cliente: <small class="text-muted">{{vm.cliente.nome}}</small></p>
+                        <p class="card-text">Rendimento Mensal: <small class="text-muted">R$ {{vm.cliente.rendimentoMensal}}</small></p>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="form-group col-md-8">
+                                    <label for="valorSolicitado">Valor Solicitado</label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">R$</div>
+                                        </div>
+                                        <input ng-model="vm.cadastro.valorSolicitado" 
+                                               ui-number-mask 
+                                               type="text" 
+                                               class="form-control" 
+                                               name="valorSolicitado">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="meses">Meses</label>
+                                    <div class="input-group mb-2">
+                                        <input ng-model="vm.itemLista.meses" 
+                                               type="number" 
+                                               class="form-control" 
+                                               name="meses">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <label for="valorSimulacao">Valor da simulação</label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">R$</div>
+                                    </div>
+                                    <input ng-model="vm.cadastro.valorSimulacao" 
+                                           ui-number-mask type="text" 
+                                           class="form-control" 
+                                           name="valorSimulacao" 
+                                           disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row justify-content-end pt-3 mr-1">
+                            <button ng-click="vm.simularEmprestimo()" 
+                                    type="button" 
+                                    class="btn btn-outline-success mr-2">Simular
+                            </button>
+                            <a ui-sref="clienteList" 
+                               class="btn btn-outline-danger">Cancelar
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div> -->
-        </form>
-        <div class="form-row justify-content-end pt-3 mr-1">
-            <button ng-click="vm.simularEmprestimo()" 
-                    type="button"
-                    class="btn btn-outline-success mr-2">Simular
-            </button>
-            <a ui-sref="clienteList" 
-                class="btn btn-outline-danger">Cancelar
-            </a>
-        </div>
+            </form>
+        </main>
     </div>
 </div>
