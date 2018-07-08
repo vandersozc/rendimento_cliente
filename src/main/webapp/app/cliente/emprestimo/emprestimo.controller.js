@@ -16,6 +16,7 @@
       vm.emprestimo = {};
 
       vm.simularEmprestimo = simularEmprestimo;
+      vm.limpaSimulacao = limpaSimulacao;
 
       if ($stateParams.id) {
         ClienteService.findById($stateParams.id)
@@ -28,6 +29,12 @@
         ClienteService.simularEmprestimo(vm.emprestimo).then(function (data) {
           vm.emprestimo = data;
         })
+      }
+
+      function limpaSimulacao() {
+        if (!vm.emprestimo.meses || !vm.emprestimo.valorSolicitado) {
+          vm.emprestimo.valorSimulacao = null; 
+        }
       }
   }
 })();

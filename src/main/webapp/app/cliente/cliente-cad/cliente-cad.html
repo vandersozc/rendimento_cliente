@@ -3,15 +3,22 @@
     <div class="row">
         <main role="main" class="col-md-10 ml-sm-auto col-lg-12">
             <div class="d-flex flex-wrap flex-md-nowrap align-items-center pt-1 pb-1 mb-2">
-                <a href="javascript:window.history.go(-1)" class="fa fa-arrow-left pt-1 pb-1 mb-2" style="font-size:30px;color:gray">
+                <a href="javascript:window.history.go(-1)" 
+                   class="fa fa-arrow-left pt-1 pb-1 mb-2" 
+                   style="font-size:30px;color:gray">
                 </a>
                 <h3 class="breadcrumb-item active">&ensp;Novo cliente</h3>
             </div>
             <form>
                 <div class="form-group">
                     <label for="cliente" class="required">Nome do Cliente</label>
-                    <input ng-model="vm.cadastro.nome" ng-class="{'is-invalid' : vm.error.nome && !vm.cadastro.nome}" type="text" class="form-control" maxlength="90" required>
-                    <small ng-if="vm.error.nome && !vm.cadastro.nome" class="invalid-feedback">
+                    <input ng-model="vm.cadastro.nome" 
+                           ng-class="{'is-invalid' : vm.error.nome && !vm.cadastro.nome}" 
+                           type="text" 
+                           class="form-control" 
+                           maxlength="90" 
+                           required>
+                        <small ng-if="vm.error.nome && !vm.cadastro.nome" class="invalid-feedback">
                             {{vm.error.nome[1]}}
                         </small>
                 </div>
@@ -23,29 +30,45 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text">R$</div>
                             </div>
-                            <input ng-model="vm.cadastro.rendimentoMensal" ng-class="{'is-invalid' : vm.error.rendimentoMensal && !vm.cadastro.rendimentoMensal}" ui-number-mask type="text" class="form-control" name="rendimentoMensal" ng-disabled="false" ng-change="vm.alteraRisco()" required>
+                            <input ng-model="vm.cadastro.rendimentoMensal" 
+                                   ng-class="{'is-invalid' : vm.error.rendimentoMensal && !vm.cadastro.rendimentoMensal}" 
+                                   ui-number-mask type="text" 
+                                   class="form-control" 
+                                   name="rendimentoMensal" 
+                                   ng-disabled="false" 
+                                   ng-change="vm.alteraRisco()" 
+                                   required>
                             <small ng-if="vm.error.rendimentoMensal && !vm.cadastro.rendimentoMensal" class="invalid-feedback">
-                                    {{vm.error.rendimentoMensal[1]}}
-                                </small>
+                                {{vm.error.rendimentoMensal[1]}}
+                            </small>
                         </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="risco" class="required">Risco</label>
                         <div class="input-group mb-2">
-                            <input ng-model="vm.cadastro.risco" type="text" class="form-control" name="risco" ng-disabled="true" required>
+                            <input ng-model="vm.cadastro.risco" 
+                                   type="text" 
+                                   class="form-control" 
+                                   name="risco" 
+                                   ng-disabled="true" 
+                                   required>
                             <small ng-if="vm.error.risco && !vm.cadastro.risco" class="invalid-feedback">
-                        {{vm.error.risco[1]}}
-                    </small>
+                                {{vm.error.risco[1]}}
+                            </small>
                         </div>
                     </div>
                 </div>
             </form>
 
             <!-- Inclusão de Endereços -->
-            <!-- ng-disabled="(!vm.cadastro.nome || !vm.cadastro.rendimentoMensal || !vm.cadastro.risco)"   -->
             <div class="card">
                 <div class="card-header">
-                    <button ng-click="vm.novoEndereco()" data-toggle="modal" data-target="#formEndereco" type="button" class="btn btn-sm btn-outline-primary">
+                    <button ng-click="vm.novoEndereco()" 
+                            data-toggle="modal" 
+                            data-target="#formEndereco" 
+                            type="button" 
+                            class="btn btn-sm btn-outline-primary"
+                            ng-disabled="(!vm.cadastro.nome || !vm.cadastro.rendimentoMensal || !vm.cadastro.risco)">
                         <span class="feather icon-plus"></span>
                         <span>+ Endereço</span>
                     </button>
@@ -66,10 +89,14 @@
                                 <td>{{item.logradouro}}</td>
                                 <td class="text-left">{{item.numero}}</td>
                                 <td class="text-right">
-                                    <button ng-click="vm.editarEndereco(item)" data-toggle="modal" data-target="#formEndereco" class="btn btn-outline-secondary py-0">
+                                    <button ng-click="vm.editarEndereco(item)" 
+                                            data-toggle="modal" 
+                                            data-target="#formEndereco" 
+                                            class="btn btn-outline-secondary py-0">
                                         <span class="fa fa-pencil"></span>
                                     </button>
-                                    <button ng-click="vm.excluirEndereco(item)" class="btn btn-outline-danger py-0">
+                                    <button ng-click="vm.excluirEndereco(item)" 
+                                            class="btn btn-outline-danger py-0">
                                         <span class="fa fa-trash"></span>
                                     </button>
                                 </td>
@@ -78,20 +105,30 @@
                     </table>
                 </div>
             </div>
-            <!--ng-disabled="vm.cadastro.enderecos.length <= 0"-->
             <div class="form-row justify-content-end pt-3 mr-1">
-                <button ng-click="vm.salvar()" type="button" class="btn btn-outline-success mr-2">Salvar
+                <button ng-click="vm.salvar()" 
+                        type="button" 
+                        class="btn btn-outline-success mr-2"
+                        ng-disabled="vm.cadastro.enderecos.length <= 0">Salvar
                 </button>
                 <a ui-sref="clienteList" class="btn btn-outline-danger">Cancelar
             </a>
             </div>
             <!-- Modal de endereços -->
-            <div class="modal fade" id="formEndereco" tabindex="-1" role="dialog" aria-labelledby="formEndereco" aria-hidden="true">
+            <div class="modal fade" 
+                 id="formEndereco" 
+                 tabindex="-1" 
+                 role="dialog" 
+                 aria-labelledby="formEndereco" 
+                 aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Cadastro de Endereços</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <button type="button" 
+                                    class="close" 
+                                    data-dismiss="modal" 
+                                    aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -100,45 +137,78 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-9">
                                         <label for="logradouro" class="required">Logradouro</label>
-                                        <input ng-model="vm.itemLista.logradouro" type="text" class="form-control" maxlength="80" required>
+                                        <input ng-model="vm.itemLista.logradouro" 
+                                               type="text" 
+                                               class="form-control" 
+                                               maxlength="80" 
+                                               required>
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="numero" class="required">Número</label>
-                                        <input ng-model="vm.itemLista.numero" type="text" class="form-control" required name="numero" maxlength="10">
+                                        <input ng-model="vm.itemLista.numero" 
+                                               type="text" 
+                                               class="form-control" 
+                                               required 
+                                               name="numero" 
+                                               maxlength="10">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
                                         <label for="cep">Cep</label>
-                                        <input ng-model="vm.itemLista.cep" type="text" class="form-control" maxlength="9" name="cep" ui-br-cep-mask>
+                                        <input ng-model="vm.itemLista.cep" 
+                                               type="text" 
+                                               class="form-control" 
+                                               maxlength="9" 
+                                               name="cep" 
+                                               ui-br-cep-mask>
                                     </div>
                                     <div class="form-group col-md-8">
                                         <label for="bairro">Bairro</label>
-                                        <input ng-model="vm.itemLista.bairro" type="text" class="form-control" maxlength="50">
+                                        <input ng-model="vm.itemLista.bairro" 
+                                               type="text" 
+                                               class="form-control" 
+                                               maxlength="50">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="cidade">Cidade</label>
-                                        <input ng-model="vm.itemLista.cidade" type="text" class="form-control" maxlength="50">
+                                        <input ng-model="vm.itemLista.cidade" 
+                                               type="text" 
+                                               class="form-control" 
+                                               maxlength="50">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="estado">Estado</label>
-                                        <input ng-model="vm.itemLista.estado" type="text" class="form-control" maxlength="50">
+                                        <input ng-model="vm.itemLista.estado" 
+                                               type="text" 
+                                               class="form-control" 
+                                               maxlength="50">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <label for="complemento">Complemento</label>
-                                        <textarea class="form-control" type="text" rows="2" maxlength="255" ng-model="vm.itemLista.complemento">
+                                        <textarea class="form-control" 
+                                                  type="text" 
+                                                  rows="2" 
+                                                  maxlength="255" 
+                                                  ng-model="vm.itemLista.complemento">
                                         </textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <a href="javascript:window.history.back()" class="btn btn-outline-success mr-2" ng-click="vm.salvarEndereco()" ng-disabled="(!vm.itemLista.logradouro || !vm.itemLista.numero)" data-dismiss="modal">Gravar
-                        </a>
-                                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Fechar
+                                <a href="javascript:window.history.back()" 
+                                   class="btn btn-outline-success mr-2" 
+                                   ng-click="vm.salvarEndereco()" 
+                                   ng-disabled="(!vm.itemLista.logradouro || !vm.itemLista.numero)" 
+                                   data-dismiss="modal">Gravar
+                                </a>
+                                <button type="button" 
+                                        class="btn btn-outline-danger" 
+                                        data-dismiss="modal">Fechar
                                 </button>
                             </div>
                         </div>

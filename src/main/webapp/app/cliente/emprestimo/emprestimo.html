@@ -22,6 +22,7 @@
                                                type="text" 
                                                class="form-control" 
                                                name="valorSolicitado"
+                                               ng-change="vm.limpaSimulacao()"
                                                required>
                                     </div>
                                 </div>
@@ -32,11 +33,12 @@
                                                type="number" 
                                                class="form-control" 
                                                name="meses"
+                                               ng-change="vm.limpaSimulacao()"
                                                required>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-row" ng-if="vm.emprestimo.valorSimulacao">
+                            <div class="form-row" ng-if="vm.emprestimo.valorSimulacao > 0">
                                 <label for="valorSimulacao">Valor da simulação</label>
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
@@ -51,7 +53,8 @@
                             </div>
                         </div>
                         <div class="form-row justify-content-end pt-3 mr-1">
-                            <button ng-click="vm.simularEmprestimo()"
+                            <button ng-disabled="(!vm.emprestimo.valorSolicitado || !vm.emprestimo.meses)"
+                                    ng-click="vm.simularEmprestimo()"
                                     type="button" 
                                     class="btn btn-outline-success mr-2">Simular
                             </button>
