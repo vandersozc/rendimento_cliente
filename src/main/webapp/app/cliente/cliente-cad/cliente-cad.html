@@ -200,12 +200,12 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <a href="javascript:window.history.back()" 
-                                   class="btn btn-outline-success mr-2" 
-                                   ng-click="vm.salvarEndereco()" 
-                                   ng-disabled="(!vm.itemLista.logradouro || !vm.itemLista.numero)" 
-                                   data-dismiss="modal">Gravar
-                                </a>
+                                <button data-target="#formEndereco"
+                                        class="btn btn-outline-success mr-2" 
+                                        ng-click="vm.salvarEndereco()" 
+                                        ng-disabled="(!vm.itemLista.logradouro || !vm.itemLista.numero)" 
+                                        data-toggle="modal">Gravar
+                                </button>
                                 <button type="button" 
                                         class="btn btn-outline-danger" 
                                         data-dismiss="modal">Fechar

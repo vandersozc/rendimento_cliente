@@ -78,6 +78,7 @@
           }
           vm.itemOriginal = null;
           vm.itemLista = {};
+          $('#formEndereco').modal('hide');
       }
 
       function excluirEndereco(item) {
